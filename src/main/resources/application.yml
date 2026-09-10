@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: library-lending-service
+
+server:
+  port: 8080
+
+# NFR-3 (docs/01-po-requirements.md): loan policy is configuration, not a
+# code constant, so PO/Ops can change it without a code change or new deploy.
+library:
+  loan-policy:
+    loan-period-days: 14
