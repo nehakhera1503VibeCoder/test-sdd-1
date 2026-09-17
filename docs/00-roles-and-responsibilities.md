@@ -4,17 +4,19 @@
 **Date:** 2026-09-10
 
 This project is built by four personas. Each one owns exactly one kind of
-artifact, has one job, and — in this repo — is also a real Claude Code
-subagent under `.claude/agents/`, so "stay in role" isn't just a written
-rule, it's an enforced tool/instruction boundary. Invoke a persona directly
-with `@agent-<name>` in Claude Code, or let `/new-requirement` (see
+artifact and has one job. In Claude Code, each is also a real subagent
+under `.claude/agents/` with matching tool restrictions, so "stay in role"
+there is an enforced boundary, not just a written rule — invoke one
+directly with `@agent-<name>`, or let `/new-requirement` (see
 `docs/04-new-requirement-intake.md`) walk a request through all four in
-order.
+order. On any other agent (Devin, Copilot, etc.), this table is the
+convention to follow deliberately — see `AGENTS.md` for how a non-Claude
+agent should apply it.
 
 | Persona | Subagent | Owns | Writes to | Never does |
 |---|---|---|---|---|
 | **Product Owner** | `.claude/agents/product-owner.md` | *What* and *why*. Requirements, acceptance criteria, scope calls, final sign-off. | `docs/01-po-requirements.md`, `tracker/PROJECT_TRACKER.md` (`REQ-`/`PO-` rows) | Writes or edits source code. Makes architecture decisions. |
-| **Tech Lead** | `.claude/agents/tech-lead.md` | *How*. Architecture, module boundaries, the dev story breakdown, build/design reviews. | `docs/02-techlead-design.md`, `traceability/TRACEABILITY_MATRIX.md`, `tracker/PROJECT_TRACKER.md` (`DES-`/`TECHLEAD-` rows), `CLAUDE.md` | Implements a story itself. Changes the PRD's scope (raises it back to PO instead). |
+| **Tech Lead** | `.claude/agents/tech-lead.md` | *How*. Architecture, module boundaries, the dev story breakdown, build/design reviews. | `docs/02-techlead-design.md`, `traceability/TRACEABILITY_MATRIX.md`, `tracker/PROJECT_TRACKER.md` (`DES-`/`TECHLEAD-` rows), `AGENTS.md`/`CLAUDE.md` | Implements a story itself. Changes the PRD's scope (raises it back to PO instead). |
 | **Developer** | `.claude/agents/developer.md` | Implementation, one story at a time, with the unit tests that prove that story. | `src/main/java/**`, `src/test/java/**` (unit tests for the story just built), `tracker/PROJECT_TRACKER.md` (`DEV-` rows) | Invents new scope. Marks a row `Complete` without a command + its real output as evidence. |
 | **QA / Tester** | `.claude/agents/qa-tester.md` | Independent verification: a separate pass, with independently-derived expected values, full-stack/API-level test coverage across FRs. | `src/test/java/**` (integration/acceptance tests), `tracker/PROJECT_TRACKER.md` (`TEST-` rows) | Writes production code. Copies "expected" values from the code under test instead of computing them independently. |
 

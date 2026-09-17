@@ -24,7 +24,7 @@ a re-briefing would have given it, dated, attributed, and cross-referenced.
 | `docs/0N-*.md` (PRD, design) | **What** and **why**; **how** it's architected | PO (requirements), Tech Lead (design) | Rarely — amended by a dated delta, not rewritten |
 | `traceability/TRACEABILITY_MATRIX.md` | **Where** each requirement lives: which design section, which code, which test | Tech Lead (created), everyone (kept current) | After every unit of work that touches a requirement |
 | `tracker/PROJECT_TRACKER.md` | **What has actually happened**, in order, with proof | Every persona, after every unit of work | After every unit of work — append-only log |
-| `CLAUDE.md` (repo root) | **Where to start**, **what the rules are** | Tech Lead | Rarely — it's the index, not the content |
+| `AGENTS.md` (repo root) | **Where to start**, **what the rules are** — tool-neutral, read by Claude Code, Devin, and Copilot alike | Tech Lead | Rarely — it's the index, not the content |
 
 The tracker and the traceability matrix are not the same thing and both
 matter: the tracker is chronological (what happened, in what order, proven
@@ -70,10 +70,11 @@ Rules:
 
 ## 5. The resume protocol
 
-Given "continue the project" (or `/resume-project`, see
+Given "continue the project" (or `/resume-project` in Claude Code, see
 `.claude/commands/resume-project.md`) and nothing else:
 
-1. Read `CLAUDE.md` — orientation and hard rules.
+1. Read `AGENTS.md` (`CLAUDE.md` imports it automatically in Claude Code)
+   — orientation and hard rules.
 2. Read every `docs/0N-*.md` in order.
 3. Read `traceability/TRACEABILITY_MATRIX.md` — what's covered, what has a
    gap.

@@ -2,8 +2,11 @@
 
 A small Spring Boot REST API (book catalog + member lending) built to
 demonstrate a **spec-driven, multi-persona, requirement-traceable**
-delivery process with Claude Code. Read **`CLAUDE.md` first** — it's the
-entry point for both this app and the process behind it.
+delivery process — usable from Claude Code, Devin, GitHub Copilot, or any
+other coding agent. Read **[`AGENTS.md`](AGENTS.md) first** — it's the
+entry point for both this app and the process behind it. (Claude Code
+users: `CLAUDE.md` imports it automatically and adds Claude-specific
+enforcement on top — see `.claude/agents/` and `.claude/commands/`.)
 
 ## The process, in one paragraph
 

@@ -7,8 +7,9 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.context.annotation.Bean;
 
 /**
- * Entry point. See CLAUDE.md for how this codebase is organized and what
- * process built it (docs/03-spec-driven-development-playbook.md).
+ * Entry point. See AGENTS.md (or CLAUDE.md in Claude Code) for how this
+ * codebase is organized and what process built it
+ * (docs/03-spec-driven-development-playbook.md).
  */
 @SpringBootApplication
 @ConfigurationPropertiesScan
